@@ -59,7 +59,7 @@ export default {
             allOptionValue: 'ALL', // 是否更换 '全部' 的选择值
           },
           {
-            formType: 'x-date-range',
+            formType: 'e-date-range',
             // type: 'daterange',
             prop: 'modifyTimeStartAndEnd',
             defaultValue: [
@@ -241,3 +241,23 @@ a {
 ### 效果
 ![](./assets/demo.png)
 ![](./assets/filter.png)
+
+### e-search e-page 自定义表单类型可以通过以下方式使用
+```javascript
+import DateRange from "@/components/DateRange"
+
+Vue.component('date-range', DateRange)
+
+  data() {
+    return {
+      config: {
+        form: [
+          { label: 'UserID：', prop: 'userId', defaultValue: '11', formType: 'date-range' },
+        ]
+        ......
+      }
+    }
+  }
+  ......
+
+```
