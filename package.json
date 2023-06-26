@@ -1,0 +1,51 @@
+{
+  "name": "x-pages",
+  "version": "1.0.0",
+  "repository": "git@github.com:wscodinglover/x-pages.git",
+  "description": "A Vue component library",
+  "main": "dist/x-pages.js",
+  "module": "dist/x-pages.esm.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "library"
+  ],
+  "author": "xichuang <1690680531@qq.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "element-ui": "^2.15.13",
+    "lodash": "^4.17.21",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "dayjs": "^1.11.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-external-helpers": "^7.22.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.4.5",
+    "@vue/component-compiler-utils": "^3.1.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "less": "^4.1.3",
+    "postcss": "^8.4.24",
+    "rollup": "^1.20.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-vue": "^5.1.9",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
