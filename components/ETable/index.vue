@@ -65,6 +65,7 @@
 
 <script>
 export default {
+  name: 'ETable',
   props: {
     list: {
       type: Array,

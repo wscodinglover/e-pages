@@ -1,4 +1,4 @@
-##  `x-vue-pages` 是基于Vue2、ElementUI的面向配置的CRUD，快速开发CRUD功能，入门简单，让你可以快速完成搬砖任务，更多的时间划水吹逼。
+##  `vue-pages` 是基于Vue2、ElementUI的面向配置的CRUD，快速开发CRUD功能，入门简单，让你可以快速完成搬砖任务，更多的时间划水吹逼。
 ### 特殊说明，使用该组件的项目须安装 下面的npm包
 ```bash
     "element-ui": "^2.x",
@@ -10,14 +10,14 @@
 
 ### 安装
 ```bash
- npm i x-vue-pages
+ npm i vue-pages
 ```
 
 ### 使用
 ``` javascript
 <template>
   <div>
-    <x-page ref="blackBoxPage" :config="config" @eventHooks="eventHooks" @selection-change="handleSelectionChange">
+    <e-page ref="blackBoxPage" :config="config" @eventHooks="eventHooks" @selection-change="handleSelectionChange">
       <template #slotBtn1="{ row }">
         <el-button type="text" @click="slotBtn(row)">
           自定义按钮列一slot按钮
@@ -28,20 +28,20 @@
           <img :src="row.url" alt="图片加载失败" width="100" height="100">
         </div>
       </template>
-    </x-page>
+    </e-page>
 
   </div>
 </template>
 
 <script>
-import { XPage } from "x-vue-pages";
+import { EPage } from "e-pages";
 import _ from "lodash"
 import dayjs from "dayjs"
 
 export default {
   name: 'HelloWorld',
   components: {
-    XPage
+    EPage
   },
   data() {
     return {

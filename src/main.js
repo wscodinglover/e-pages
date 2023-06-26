@@ -1,7 +1,7 @@
-import XPage from '../components/XPage'
-import XSearch from '../components/XSearch'
-import XTable from '../components/XTable'
-import XPagination from '../components/XPagination'
-import XDateRange from '../components/XDateRange'
+import EPage from '../components/EPage'
+import ESearch from '../components/ESearch'
+import ETable from '../components/ETable'
+import EPagination from '../components/EPagination'
+import EDateRange from '../components/EDateRange'
 
-export { XPage, XSearch, XTable, XPagination, XDateRange }
+export { EPage, ESearch, ETable, EPagination, EDateRange }

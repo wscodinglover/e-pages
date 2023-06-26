@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-card class="search-container">
-      <x-search
+      <e-search
         ref="searchForm"
         :form-data="formData"
         :form-config="formConfig"
@@ -35,10 +35,10 @@
 
           </div>
         </template>
-      </x-search>
+      </e-search>
     </el-card>
     <el-card class="table-container">
-      <x-table
+      <e-table
         ref="costomTable"
         :list="list"
         :columns="columns"
@@ -109,26 +109,26 @@
             <slot v-if="columnSlot.slotName" :name="columnSlot.slotName" :row="{ ...row }"></slot>
           </div>
         </template>
-      </x-table>
-      <x-pagination
+      </e-table>
+      <e-pagination
         :page-info="pagination"
         :page-sizes="pageSizes"
         @paginationEvent="paginationEvent"
-      ></x-pagination>
+      ></e-pagination>
     </el-card>
   </div>
 </template>
 <script>
-import XSearch from '../XSearch'
-import XTable from '../XTable'
-import XPagination from './pagination'
+import ESearch from '../ESearch'
+import ETable from '../ETable'
+import EPagination from './pagination'
 import _ from 'lodash'
 
 export default {
   components: {
-    XSearch,
-    XTable,
-    XPagination,
+    ESearch,
+    ETable,
+    EPagination,
   },
   props: {
     config: {

@@ -1,10 +1,10 @@
 {
-  "name": "x-vue-pages",
+  "name": "e-pages",
   "version": "1.0.0",
-  "repository": "git@github.com:wscodinglover/x-vue-pages.git",
+  "repository": "git@github.com:wscodinglover/e-pages.git",
   "description": "A Vue component library",
-  "main": "dist/x-vue-pages.js",
-  "module": "dist/x-vue-pages.esm.js",
+  "main": "dist/e-pages.js",
+  "module": "dist/e-pages.esm.js",
   "files": [
     "dist/*",
     "src/*"

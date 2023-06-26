@@ -393,7 +393,7 @@ var isDuringDate = function isDuringDate(time, beginDateStr, endDateStr) {
   return false;
 };
 var script = {
-  name: 'DuDateRange',
+  name: 'EDateRange',
   data: function data() {
     return {
       minPickerDate: {}
@@ -600,9 +600,9 @@ __vue_render__._withStripped = true;
 
 //
 var script$1 = {
-  name: 'XSearch',
+  name: 'ESearch',
   components: {
-    XDateRange: __vue_component__
+    EDateRange: __vue_component__
   },
   inheritAttrs: false,
   props: {
@@ -921,11 +921,11 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-06e77740_0", { source: "\n.btn-item[data-v-06e77740] {\n  float: right;\n}\n.form-wraper[data-v-06e77740] {\n  overflow: hidden;\n}\n", map: {"version":3,"sources":["E:\\Desktop\\x-pages\\components\\XSearch\\index.vue"],"names":[],"mappings":";AA+IA;EACA,YAAA;AACA;AACA;EACA,gBAAA;AACA","file":"index.vue","sourcesContent":["<template>\n  <div class=\"form-wraper\">\n    <el-form\n      ref=\"form\"\n      :model=\"formData\"\n      v-bind=\"{ ...formConfig, ...$attrs }\"\n      v-on=\"$listeners\"\n    >\n      <template v-for=\"(item, idx) in formList\">\n        <el-form-item\n          v-if=\"!item.isHidden\"\n          :key=\"`form_item_${idx}`\"\n          v-bind=\"{\n            ...item,\n          }\"\n        >\n          <el-radio-group v-if=\"item.formType === 'el-radio-group'\" v-model=\"formData[item.prop]\">\n            <el-radio\n              v-for=\"(option, optIdx) in getOptions(item.options)\"\n              :key=\"`radio_item_${optIdx}`\"\n              v-bind=\"{\n                ...item,\n                ...option,\n                ...adaptor(option, item.adaptor)\n              }\"\n              :label=\"option.value\"\n            >\n              {{ option.label }}\n            </el-radio>\n          </el-radio-group>\n          <slot v-else-if=\"item.slotName\" :name=\"item.slotName\" :config=\"{ ...item }\"></slot>\n          <component\n            :is=\"`${item.formType}`\"\n            v-else\n            v-model=\"formData[item.prop]\"\n            v-bind=\"{\n              clearable: true,\n              ...item,\n              ...$attrs\n            }\"\n            v-on=\"{ ...item.event, ...$listeners }\"\n          >\n            <template v-if=\"item.formType === 'el-select'\">\n              <el-option v-if=\"item.showAllOpt\" :value=\"item.allOptionValue || ''\" label=\"全部\"></el-option>\n              <el-option\n                v-for=\"(option, optIdx) in getOptions(item.options)\"\n                :key=\"`select_item_${optIdx}`\"\n                v-bind=\"{\n                  ...option,\n                  ...adaptor(option, item.adaptor)\n                }\"\n              ></el-option>\n            </template>\n            <template v-else-if=\"item.formType === 'el-checkbox-group'\">\n              <el-checkbox\n                v-for=\"(option, optIdx) in getOptions(item.options)\"\n                :key=\"`checkbox_item_${optIdx}`\"\n                v-bind=\"{\n                  ...option,\n                  ...adaptor(option, item.adaptor)\n                }\"\n                :name=\"item.prop\"\n                :label=\"option.value\"\n              >\n                {{ option.label }}\n              </el-checkbox>\n\n            </template>\n          </component>\n        </el-form-item>\n      </template>\n      <div class=\"btn-item\">\n        <slot></slot>\n      </div>\n    </el-form>\n  </div>\n</template>\n\n<script>\nimport XDateRange from '../XDateRange'\n\nexport default {\n  name: 'XSearch',\n  components: {\n    XDateRange\n  },\n  inheritAttrs: false,\n  props: {\n    formData: {\n      type: Object,\n      default: () => ({}),\n    },\n    formConfig: {\n      type: Object,\n      default: () => ({\n        labelWidth: '100px',\n        inline: true,\n      }),\n    },\n    formList: {\n      type: Array,\n      default: () => ([]),\n    },\n    optionsData: {\n      type: Object,\n      default: () => ({}),\n    },\n    formExtraComponent: {\n      type: Object,\n      default: () => ({}),\n    },\n\n  },\n  data() {\n    return {}\n  },\n  computed: {\n    getOptions() {\n      return (options) => (Array.isArray(options) ? options : this.optionsData[options])\n    },\n  },\n  methods: {\n    adaptor(option, adaptor) {\n      if (!adaptor) return {}\n      return {\n        label: option[adaptor.label] ?? option.label,\n        value: option[adaptor.value] ?? option.value,\n      }\n    },\n    validate(cb) {\n      return this.$refs.form.validate(cb)\n    },\n    validateField(prop, cb) {\n      return this.$refs.form.validateField(prop, cb)\n    },\n    resetFields() {\n      this.$refs.form.resetFields()\n    },\n  },\n}\n</script>\n\n<style scoped>\n.btn-item {\n  float: right;\n}\n.form-wraper {\n  overflow: hidden;\n}\n</style>\n"]}, media: undefined });
+    inject("data-v-12991d5a_0", { source: "\n.btn-item[data-v-12991d5a] {\n  float: right;\n}\n.form-wraper[data-v-12991d5a] {\n  overflow: hidden;\n}\n", map: {"version":3,"sources":["E:\\Desktop\\x-pages\\components\\ESearch\\index.vue"],"names":[],"mappings":";AA+IA;EACA,YAAA;AACA;AACA;EACA,gBAAA;AACA","file":"index.vue","sourcesContent":["<template>\n  <div class=\"form-wraper\">\n    <el-form\n      ref=\"form\"\n      :model=\"formData\"\n      v-bind=\"{ ...formConfig, ...$attrs }\"\n      v-on=\"$listeners\"\n    >\n      <template v-for=\"(item, idx) in formList\">\n        <el-form-item\n          v-if=\"!item.isHidden\"\n          :key=\"`form_item_${idx}`\"\n          v-bind=\"{\n            ...item,\n          }\"\n        >\n          <el-radio-group v-if=\"item.formType === 'el-radio-group'\" v-model=\"formData[item.prop]\">\n            <el-radio\n              v-for=\"(option, optIdx) in getOptions(item.options)\"\n              :key=\"`radio_item_${optIdx}`\"\n              v-bind=\"{\n                ...item,\n                ...option,\n                ...adaptor(option, item.adaptor)\n              }\"\n              :label=\"option.value\"\n            >\n              {{ option.label }}\n            </el-radio>\n          </el-radio-group>\n          <slot v-else-if=\"item.slotName\" :name=\"item.slotName\" :config=\"{ ...item }\"></slot>\n          <component\n            :is=\"`${item.formType}`\"\n            v-else\n            v-model=\"formData[item.prop]\"\n            v-bind=\"{\n              clearable: true,\n              ...item,\n              ...$attrs\n            }\"\n            v-on=\"{ ...item.event, ...$listeners }\"\n          >\n            <template v-if=\"item.formType === 'el-select'\">\n              <el-option v-if=\"item.showAllOpt\" :value=\"item.allOptionValue || ''\" label=\"全部\"></el-option>\n              <el-option\n                v-for=\"(option, optIdx) in getOptions(item.options)\"\n                :key=\"`select_item_${optIdx}`\"\n                v-bind=\"{\n                  ...option,\n                  ...adaptor(option, item.adaptor)\n                }\"\n              ></el-option>\n            </template>\n            <template v-else-if=\"item.formType === 'el-checkbox-group'\">\n              <el-checkbox\n                v-for=\"(option, optIdx) in getOptions(item.options)\"\n                :key=\"`checkbox_item_${optIdx}`\"\n                v-bind=\"{\n                  ...option,\n                  ...adaptor(option, item.adaptor)\n                }\"\n                :name=\"item.prop\"\n                :label=\"option.value\"\n              >\n                {{ option.label }}\n              </el-checkbox>\n\n            </template>\n          </component>\n        </el-form-item>\n      </template>\n      <div class=\"btn-item\">\n        <slot></slot>\n      </div>\n    </el-form>\n  </div>\n</template>\n\n<script>\nimport EDateRange from '../EDateRange'\n\nexport default {\n  name: 'ESearch',\n  components: {\n    EDateRange\n  },\n  inheritAttrs: false,\n  props: {\n    formData: {\n      type: Object,\n      default: () => ({}),\n    },\n    formConfig: {\n      type: Object,\n      default: () => ({\n        labelWidth: '100px',\n        inline: true,\n      }),\n    },\n    formList: {\n      type: Array,\n      default: () => ([]),\n    },\n    optionsData: {\n      type: Object,\n      default: () => ({}),\n    },\n    formExtraComponent: {\n      type: Object,\n      default: () => ({}),\n    },\n\n  },\n  data() {\n    return {}\n  },\n  computed: {\n    getOptions() {\n      return (options) => (Array.isArray(options) ? options : this.optionsData[options])\n    },\n  },\n  methods: {\n    adaptor(option, adaptor) {\n      if (!adaptor) return {}\n      return {\n        label: option[adaptor.label] ?? option.label,\n        value: option[adaptor.value] ?? option.value,\n      }\n    },\n    validate(cb) {\n      return this.$refs.form.validate(cb)\n    },\n    validateField(prop, cb) {\n      return this.$refs.form.validateField(prop, cb)\n    },\n    resetFields() {\n      this.$refs.form.resetFields()\n    },\n  },\n}\n</script>\n\n<style scoped>\n.btn-item {\n  float: right;\n}\n.form-wraper {\n  overflow: hidden;\n}\n</style>\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-06e77740";
+  const __vue_scope_id__$1 = "data-v-12991d5a";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -1016,6 +1016,7 @@ __vue_render__$1._withStripped = true;
 //
 
 var script$2 = {
+  name: 'ETable',
   props: {
     list: {
       type: Array,
@@ -1281,11 +1282,11 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = function (inject) {
     if (!inject) return
-    inject("data-v-0c1effb7_0", { source: ".instore-table .header-btn-group[data-v-0c1effb7] {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n  align-items: center;\n  padding-bottom: 20px;\n}\n.instore-table .header-btn-group .table-filter[data-v-0c1effb7] {\n  padding-left: 20px;\n}\n.instore-table .table-icon[data-v-0c1effb7] {\n  font-size: 24px;\n}\n.check-all[data-v-0c1effb7] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.check-list[data-v-0c1effb7] {\n  display: flex;\n  flex-direction: column;\n  max-height: 300px;\n  overflow-y: auto;\n}\n", map: {"version":3,"sources":["index.vue"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,WAAW;EACX,2BAA2B;EAC3B,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,eAAe;AACjB;AACA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,iBAAiB;EACjB,gBAAgB;AAClB","file":"index.vue","sourcesContent":[".instore-table .header-btn-group {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n  align-items: center;\n  padding-bottom: 20px;\n}\n.instore-table .header-btn-group .table-filter {\n  padding-left: 20px;\n}\n.instore-table .table-icon {\n  font-size: 24px;\n}\n.check-all {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.check-list {\n  display: flex;\n  flex-direction: column;\n  max-height: 300px;\n  overflow-y: auto;\n}\n"]}, media: undefined });
+    inject("data-v-722985de_0", { source: ".instore-table .header-btn-group[data-v-722985de] {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n  align-items: center;\n  padding-bottom: 20px;\n}\n.instore-table .header-btn-group .table-filter[data-v-722985de] {\n  padding-left: 20px;\n}\n.instore-table .table-icon[data-v-722985de] {\n  font-size: 24px;\n}\n.check-all[data-v-722985de] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.check-list[data-v-722985de] {\n  display: flex;\n  flex-direction: column;\n  max-height: 300px;\n  overflow-y: auto;\n}\n", map: {"version":3,"sources":["index.vue"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,WAAW;EACX,2BAA2B;EAC3B,mBAAmB;EACnB,oBAAoB;AACtB;AACA;EACE,kBAAkB;AACpB;AACA;EACE,eAAe;AACjB;AACA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,iBAAiB;EACjB,gBAAgB;AAClB","file":"index.vue","sourcesContent":[".instore-table .header-btn-group {\n  display: flex;\n  width: 100%;\n  flex-direction: row-reverse;\n  align-items: center;\n  padding-bottom: 20px;\n}\n.instore-table .header-btn-group .table-filter {\n  padding-left: 20px;\n}\n.instore-table .table-icon {\n  font-size: 24px;\n}\n.check-all {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.check-list {\n  display: flex;\n  flex-direction: column;\n  max-height: 300px;\n  overflow-y: auto;\n}\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-0c1effb7";
+  const __vue_scope_id__$2 = "data-v-722985de";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
@@ -1329,7 +1330,7 @@ __vue_render__$2._withStripped = true;
 //
 
 var script$3 = {
-  name: 'XPagination',
+  name: 'EPagination',
   props: {
     total: {
       type: Number,
@@ -1421,11 +1422,11 @@ __vue_render__$3._withStripped = true;
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-43d6fad2_0", { source: "\n.pagination[data-v-43d6fad2] {\r\n  margin-top: 20px;\n}\r\n", map: {"version":3,"sources":["E:\\Desktop\\x-pages\\components\\XPagination\\index.vue"],"names":[],"mappings":";AA2DA;EACA,gBAAA;AACA","file":"index.vue","sourcesContent":["<template>\r\n  <div class=\"pagination\">\r\n    <el-row type=\"flex\" justify=\"end\">\r\n      <el-pagination\r\n        :current-page=\"currentPage\"\r\n        :page-sizes=\"pageSizes\"\r\n        :page-size=\"pageSize\"\r\n        layout=\"total, sizes, prev, pager, next, jumper, slot\"\r\n        :total=\"total\"\r\n        @size-change=\"handleSizeChange\"\r\n        @current-change=\"handleCurrentChange\"\r\n      >\r\n        <span v-if=\"showTips\" style=\"color: red;padding-left:10px;\">*由于数据量过大，当前限制最多可查询至第100页</span>\r\n      </el-pagination>\r\n    </el-row>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'XPagination',\r\n  props: {\r\n    total: {\r\n      type: Number,\r\n      default: 0,\r\n    },\r\n    pageSize: {\r\n      type: Number,\r\n      default: 20,\r\n    },\r\n    currentPage: {\r\n      type: Number,\r\n      default: 1,\r\n    },\r\n    pageSizes: {\r\n      type: Array,\r\n      default: () => [10, 20, 30, 50],\r\n    },\r\n    showTips: {\r\n      type: Boolean,\r\n      default: false,\r\n    },\r\n  },\r\n  data() {\r\n    return {\r\n    }\r\n  },\r\n  methods: {\r\n    handleSizeChange(val) {\r\n      this.$emit('handleSizeChange', val)\r\n    },\r\n    handleCurrentChange(val) {\r\n      this.$emit('handleCurrentChange', val)\r\n    },\r\n  },\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.pagination {\r\n  margin-top: 20px;\r\n}\r\n</style>\r\n"]}, media: undefined });
+    inject("data-v-7741fbb2_0", { source: "\n.pagination[data-v-7741fbb2] {\r\n  margin-top: 20px;\n}\r\n", map: {"version":3,"sources":["E:\\Desktop\\x-pages\\components\\EPagination\\index.vue"],"names":[],"mappings":";AA2DA;EACA,gBAAA;AACA","file":"index.vue","sourcesContent":["<template>\r\n  <div class=\"pagination\">\r\n    <el-row type=\"flex\" justify=\"end\">\r\n      <el-pagination\r\n        :current-page=\"currentPage\"\r\n        :page-sizes=\"pageSizes\"\r\n        :page-size=\"pageSize\"\r\n        layout=\"total, sizes, prev, pager, next, jumper, slot\"\r\n        :total=\"total\"\r\n        @size-change=\"handleSizeChange\"\r\n        @current-change=\"handleCurrentChange\"\r\n      >\r\n        <span v-if=\"showTips\" style=\"color: red;padding-left:10px;\">*由于数据量过大，当前限制最多可查询至第100页</span>\r\n      </el-pagination>\r\n    </el-row>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  name: 'EPagination',\r\n  props: {\r\n    total: {\r\n      type: Number,\r\n      default: 0,\r\n    },\r\n    pageSize: {\r\n      type: Number,\r\n      default: 20,\r\n    },\r\n    currentPage: {\r\n      type: Number,\r\n      default: 1,\r\n    },\r\n    pageSizes: {\r\n      type: Array,\r\n      default: () => [10, 20, 30, 50],\r\n    },\r\n    showTips: {\r\n      type: Boolean,\r\n      default: false,\r\n    },\r\n  },\r\n  data() {\r\n    return {\r\n    }\r\n  },\r\n  methods: {\r\n    handleSizeChange(val) {\r\n      this.$emit('handleSizeChange', val)\r\n    },\r\n    handleCurrentChange(val) {\r\n      this.$emit('handleCurrentChange', val)\r\n    },\r\n  },\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.pagination {\r\n  margin-top: 20px;\r\n}\r\n</style>\r\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-43d6fad2";
+  const __vue_scope_id__$3 = "data-v-7741fbb2";
   /* module identifier */
   const __vue_module_identifier__$3 = undefined;
   /* functional template */
@@ -1452,7 +1453,7 @@ __vue_render__$3._withStripped = true;
 //
 var script$4 = {
   components: {
-    XPagination: __vue_component__$3
+    EPagination: __vue_component__$3
   },
   props: {
     pageInfo: {
@@ -1500,7 +1501,7 @@ var __vue_render__$4 = function () {
     "div",
     [
       _vm.pageInfo.show && _vm.pageInfo.total > 0
-        ? _c("x-pagination", {
+        ? _c("e-pagination", {
             attrs: {
               total: _vm.pageInfo.total,
               "current-page": _vm.pageInfo.pageNum,
@@ -1551,9 +1552,9 @@ __vue_render__$4._withStripped = true;
 
 var script$5 = {
   components: {
-    XSearch: __vue_component__$1,
-    XTable: __vue_component__$2,
-    XPagination: __vue_component__$4
+    ESearch: __vue_component__$1,
+    ETable: __vue_component__$2,
+    EPagination: __vue_component__$4
   },
   props: {
     config: {
@@ -1791,7 +1792,7 @@ var __vue_render__$5 = function () {
         { staticClass: "search-container" },
         [
           _c(
-            "x-search",
+            "e-search",
             _vm._g(
               _vm._b(
                 {
@@ -1804,7 +1805,7 @@ var __vue_render__$5 = function () {
                     formExtraComponent: _vm.formExtraComponent,
                   },
                 },
-                "x-search",
+                "e-search",
                 _vm.$attrs,
                 false
               ),
@@ -1862,7 +1863,7 @@ var __vue_render__$5 = function () {
         { staticClass: "table-container" },
         [
           _c(
-            "x-table",
+            "e-table",
             _vm._g(
               _vm._b(
                 {
@@ -2091,7 +2092,7 @@ var __vue_render__$5 = function () {
                     true
                   ),
                 },
-                "x-table",
+                "e-table",
                 Object.assign({}, _vm.$attrs, _vm.config.table),
                 false
               ),
@@ -2099,7 +2100,7 @@ var __vue_render__$5 = function () {
             )
           ),
           _vm._v(" "),
-          _c("x-pagination", {
+          _c("e-pagination", {
             attrs: { "page-info": _vm.pagination, "page-sizes": _vm.pageSizes },
             on: { paginationEvent: _vm.paginationEvent },
           }),
@@ -2116,11 +2117,11 @@ __vue_render__$5._withStripped = true;
   /* style */
   const __vue_inject_styles__$5 = function (inject) {
     if (!inject) return
-    inject("data-v-71f33c5a_0", { source: ".table-container[data-v-71f33c5a] {\n  margin-top: 20px;\n}\n.text-wrap[data-v-71f33c5a] {\n  text-align: left;\n  word-break: break-all;\n  white-space: pre-line;\n}\n", map: {"version":3,"sources":["index.vue"],"names":[],"mappings":"AAAA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,qBAAqB;EACrB,qBAAqB;AACvB","file":"index.vue","sourcesContent":[".table-container {\n  margin-top: 20px;\n}\n.text-wrap {\n  text-align: left;\n  word-break: break-all;\n  white-space: pre-line;\n}\n"]}, media: undefined });
+    inject("data-v-3575be1a_0", { source: ".table-container[data-v-3575be1a] {\n  margin-top: 20px;\n}\n.text-wrap[data-v-3575be1a] {\n  text-align: left;\n  word-break: break-all;\n  white-space: pre-line;\n}\n", map: {"version":3,"sources":["index.vue"],"names":[],"mappings":"AAAA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,qBAAqB;EACrB,qBAAqB;AACvB","file":"index.vue","sourcesContent":[".table-container {\n  margin-top: 20px;\n}\n.text-wrap {\n  text-align: left;\n  word-break: break-all;\n  white-space: pre-line;\n}\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$5 = "data-v-71f33c5a";
+  const __vue_scope_id__$5 = "data-v-3575be1a";
   /* module identifier */
   const __vue_module_identifier__$5 = undefined;
   /* functional template */
@@ -2144,4 +2145,4 @@ __vue_render__$5._withStripped = true;
     undefined
   );
 
-export { __vue_component__ as XDateRange, __vue_component__$5 as XPage, __vue_component__$3 as XPagination, __vue_component__$1 as XSearch, __vue_component__$2 as XTable };
+export { __vue_component__ as EDateRange, __vue_component__$5 as EPage, __vue_component__$3 as EPagination, __vue_component__$1 as ESearch, __vue_component__$2 as ETable };

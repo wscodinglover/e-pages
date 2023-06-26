@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-pagination
+    <e-pagination
       v-if="pageInfo.show && pageInfo.total > 0"
       :total="pageInfo.total"
       :current-page="pageInfo.pageNum"
@@ -8,13 +8,13 @@
       :page-sizes="pageSizes"
       @handleSizeChange="handleSizeChange"
       @handleCurrentChange="handleCurrentChange"
-    ></x-pagination>
+    ></e-pagination>
   </div>
 </template>
 <script>
-import XPagination from '../XPagination'
+import EPagination from '../EPagination'
 export default {
-  components: { XPagination },
+  components: { EPagination },
   props: {
     pageInfo: {
       type: Object,

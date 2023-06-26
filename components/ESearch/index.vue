@@ -77,12 +77,12 @@
 </template>
 
 <script>
-import XDateRange from '../XDateRange'
+import EDateRange from '../EDateRange'
 
 export default {
-  name: 'XSearch',
+  name: 'ESearch',
   components: {
-    XDateRange
+    EDateRange
   },
   inheritAttrs: false,
   props: {

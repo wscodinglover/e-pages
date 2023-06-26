@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'XPagination',
+  name: 'EPagination',
   props: {
     total: {
       type: Number,

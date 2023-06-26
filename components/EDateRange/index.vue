@@ -32,7 +32,7 @@ const isDuringDate = (time, beginDateStr, endDateStr) => {
 }
 
 export default {
-  name: 'DuDateRange',
+  name: 'EDateRange',
   data() {
     return {
       minPickerDate: {},
