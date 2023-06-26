@@ -1,10 +1,10 @@
 {
-  "name": "x-pages",
+  "name": "x-vue-pages",
   "version": "1.0.0",
-  "repository": "git@github.com:wscodinglover/x-pages.git",
+  "repository": "git@github.com:wscodinglover/x-vue-pages.git",
   "description": "A Vue component library",
-  "main": "dist/x-pages.js",
-  "module": "dist/x-pages.esm.js",
+  "main": "dist/x-vue-pages.js",
+  "module": "dist/x-vue-pages.esm.js",
   "files": [
     "dist/*",
     "src/*"
@@ -19,14 +19,14 @@
     "component",
     "library"
   ],
-  "author": "xichuang <1690680531@qq.com>",
+  "author": "lovercodingws",
   "license": "MIT",
   "peerDependencies": {
+    "dayjs": "^1.11.8",
     "element-ui": "^2.15.13",
     "lodash": "^4.17.21",
     "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10",
-    "dayjs": "^1.11.8"
+    "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

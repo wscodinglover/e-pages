@@ -9,9 +9,9 @@ export default [
   {
     input: "src/main.js",
     output: [
-      { file: "dist/x-pages.js", format: "esm" },
+      { file: "dist/x-vue-pages.js", format: "esm" },
       {
-        file: "dist/x-pages.min.js",
+        file: "dist/x-vue-pages.esm.js",
         format: "esm",
         plugins: [terser({ output: { ecma: 6 } })],
       },

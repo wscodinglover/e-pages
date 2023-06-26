@@ -1,4 +1,4 @@
-##  `X-Pages` 是基于Vue2、ElementUI的面向配置的CRUD，快速开发CRUD功能，入门简单，让你可以快速完成搬砖任务，更多的时间划水吹逼。
+##  `x-vue-pages` 是基于Vue2、ElementUI的面向配置的CRUD，快速开发CRUD功能，入门简单，让你可以快速完成搬砖任务，更多的时间划水吹逼。
 ### 特殊说明，使用该组件的项目须安装 下面的npm包
 ```bash
     "element-ui": "^2.x",
@@ -10,7 +10,7 @@
 
 ### 安装
 ```bash
- npm i x-pages
+ npm i x-vue-pages
 ```
 
 ### 使用
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { XPage } from "x-pages";
+import { XPage } from "x-vue-pages";
 import _ from "lodash"
 import dayjs from "dayjs"
 
